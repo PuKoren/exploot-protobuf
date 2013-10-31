@@ -1,6 +1,6 @@
 message Message {
-  required string sessionId = 1;
-  required string sessionHash = 2;
+  optional string sessionId = 1;
+  optional string sessionHash = 2;
 
   enum MessageType {
     CONNECT = 0;

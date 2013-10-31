@@ -1,0 +1,4 @@
+message Connect {
+  required string nickname = 1;
+  required string passhash = 2;
+}

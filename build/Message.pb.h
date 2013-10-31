@@ -237,7 +237,7 @@ class Message : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // required string sessionId = 1;
+  // optional string sessionId = 1;
   inline bool has_sessionid() const;
   inline void clear_sessionid();
   static const int kSessionIdFieldNumber = 1;
@@ -249,7 +249,7 @@ class Message : public ::google::protobuf::Message {
   inline ::std::string* release_sessionid();
   inline void set_allocated_sessionid(::std::string* sessionid);
 
-  // required string sessionHash = 2;
+  // optional string sessionHash = 2;
   inline bool has_sessionhash() const;
   inline void clear_sessionhash();
   static const int kSessionHashFieldNumber = 2;
@@ -400,7 +400,7 @@ inline void Message_MessageData::set_type(::Message_MessageType value) {
 
 // Message
 
-// required string sessionId = 1;
+// optional string sessionId = 1;
 inline bool Message::has_sessionid() const {
   return (_has_bits_[0] & 0x00000001u) != 0;
 }
@@ -470,7 +470,7 @@ inline void Message::set_allocated_sessionid(::std::string* sessionid) {
   }
 }
 
-// required string sessionHash = 2;
+// optional string sessionHash = 2;
 inline bool Message::has_sessionhash() const {
   return (_has_bits_[0] & 0x00000002u) != 0;
 }

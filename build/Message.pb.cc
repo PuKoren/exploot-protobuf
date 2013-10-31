@@ -104,7 +104,7 @@ void protobuf_AddDesc_Message_2eproto() {
 
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
     "\n\rMessage.proto\"\353\001\n\007Message\022\021\n\tsessionId"
-    "\030\001 \002(\t\022\023\n\013sessionHash\030\002 \002(\t\022%\n\007message\030\003"
+    "\030\001 \001(\t\022\023\n\013sessionHash\030\002 \001(\t\022%\n\007message\030\003"
     " \003(\0132\024.Message.MessageData\032H\n\013MessageDat"
     "a\022\014\n\004data\030\001 \002(\t\022+\n\004type\030\002 \002(\0162\024.Message."
     "MessageType:\007CONNECT\"G\n\013MessageType\022\013\n\007C"
@@ -512,7 +512,7 @@ bool Message::MergePartialFromCodedStream(
   ::google::protobuf::uint32 tag;
   while ((tag = input->ReadTag()) != 0) {
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // required string sessionId = 1;
+      // optional string sessionId = 1;
       case 1: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -528,7 +528,7 @@ bool Message::MergePartialFromCodedStream(
         break;
       }
 
-      // required string sessionHash = 2;
+      // optional string sessionHash = 2;
       case 2: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -578,7 +578,7 @@ bool Message::MergePartialFromCodedStream(
 
 void Message::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // required string sessionId = 1;
+  // optional string sessionId = 1;
   if (has_sessionid()) {
     ::google::protobuf::internal::WireFormat::VerifyUTF8String(
       this->sessionid().data(), this->sessionid().length(),
@@ -587,7 +587,7 @@ void Message::SerializeWithCachedSizes(
       1, this->sessionid(), output);
   }
 
-  // required string sessionHash = 2;
+  // optional string sessionHash = 2;
   if (has_sessionhash()) {
     ::google::protobuf::internal::WireFormat::VerifyUTF8String(
       this->sessionhash().data(), this->sessionhash().length(),
@@ -610,7 +610,7 @@ void Message::SerializeWithCachedSizes(
 
 ::google::protobuf::uint8* Message::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
-  // required string sessionId = 1;
+  // optional string sessionId = 1;
   if (has_sessionid()) {
     ::google::protobuf::internal::WireFormat::VerifyUTF8String(
       this->sessionid().data(), this->sessionid().length(),
@@ -620,7 +620,7 @@ void Message::SerializeWithCachedSizes(
         1, this->sessionid(), target);
   }
 
-  // required string sessionHash = 2;
+  // optional string sessionHash = 2;
   if (has_sessionhash()) {
     ::google::protobuf::internal::WireFormat::VerifyUTF8String(
       this->sessionhash().data(), this->sessionhash().length(),
@@ -648,14 +648,14 @@ int Message::ByteSize() const {
   int total_size = 0;
 
   if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
-    // required string sessionId = 1;
+    // optional string sessionId = 1;
     if (has_sessionid()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::StringSize(
           this->sessionid());
     }
 
-    // required string sessionHash = 2;
+    // optional string sessionHash = 2;
     if (has_sessionhash()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::StringSize(
@@ -721,7 +721,6 @@ void Message::CopyFrom(const Message& from) {
 }
 
 bool Message::IsInitialized() const {
-  if ((_has_bits_[0] & 0x00000003) != 0x00000003) return false;
 
   for (int i = 0; i < message_size(); i++) {
     if (!this->message(i).IsInitialized()) return false;

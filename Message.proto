@@ -1,0 +1,18 @@
+message Message {
+  required string sessionId = 1;
+  required string sessionHash = 2;
+
+  enum MessageType {
+    CONNECT = 0;
+    DISCONNECT = 1;
+    INPUTKEY = 2;
+    UPDATEPOS = 3;
+  }
+
+  message MessageData {
+    required string data = 1;
+    required MessageType type = 2 [default = CONNECT];
+  }
+
+  repeated MessageData message = 3;
+}

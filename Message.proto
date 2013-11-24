@@ -7,6 +7,7 @@ message Message {
     DISCONNECT = 1;
     INPUTKEY = 2;
     UPDATEPOS = 3;
+    CHALLENGE = 4;
   }
 
   message MessageData {

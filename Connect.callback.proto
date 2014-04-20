@@ -1,0 +1,3 @@
+message ConnectCallback {
+  required bool succeed = 1;
+}

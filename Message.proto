@@ -8,6 +8,7 @@ message Message {
     INPUTKEY = 2;
     UPDATEPOS = 3;
     CHALLENGE = 4;
+	LOGIN_CALLBACK = 5;
   }
 
   message MessageData {

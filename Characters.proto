@@ -1,0 +1,13 @@
+message Characters {
+    enum MessageType {
+        LIST = 0;
+        CREATE = 1;
+        SELECT = 2;
+        LIST_CB = 3;
+        CREATE_CB = 4;
+        SELECT_CB = 5;
+    }
+
+    required string data = 1;
+    required MessageType type = 2 [default = LIST];
+}

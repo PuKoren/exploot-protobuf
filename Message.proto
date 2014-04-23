@@ -9,6 +9,7 @@ message Message {
     UPDATEPOS = 3;
     CHALLENGE = 4;
 	LOGIN_CALLBACK = 5;
+    CHARACTER = 6;
   }
 
   message MessageData {

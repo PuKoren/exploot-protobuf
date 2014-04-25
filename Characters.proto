@@ -16,5 +16,12 @@ message Characters {
         required int32 char_level = 3;
     }
 
+    message CharCreate{
+        required string char_name = 1;
+        required int32 char_id = 2;
+        required bool created = 3;
+    }
+
     repeated CharList CharacterList = 2;
+    optional CharCreate CreateData = 3;
 }
